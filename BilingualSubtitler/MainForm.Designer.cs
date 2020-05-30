@@ -93,6 +93,7 @@
             this.thirdRussianSubtitlesProgressLabel = new System.Windows.Forms.Label();
             this.thirdRussianSubtitlesProgressBar = new System.Windows.Forms.ProgressBar();
             this.button1 = new System.Windows.Forms.Button();
+            this.playVideoButton = new System.Windows.Forms.Button();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -794,12 +795,25 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // playVideoButton
+            // 
+            this.playVideoButton.AutoSize = true;
+            this.playVideoButton.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.playVideoButton.Location = new System.Drawing.Point(537, 502);
+            this.playVideoButton.Name = "playVideoButton";
+            this.playVideoButton.Size = new System.Drawing.Size(156, 25);
+            this.playVideoButton.TabIndex = 47;
+            this.playVideoButton.Text = "playVideoButton";
+            this.playVideoButton.UseVisualStyleBackColor = false;
+            this.playVideoButton.Click += new System.EventHandler(this.playVideoButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(750, 714);
+            this.Controls.Add(this.playVideoButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox5);
@@ -827,6 +841,7 @@
             this.thirdRussianSubtitlesGroupBox.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -895,5 +910,6 @@
         private System.Windows.Forms.TextBox originalSubtitlesFileNameEnding;
         private System.Windows.Forms.Button createOriginalAndBilingualSubtitlesFilesButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button playVideoButton;
     }
 }

@@ -181,10 +181,13 @@ namespace BilingualSubtitler
                                 "Параметры видеоплеера (для просмотра с динамически подключаемыми русскими субтитрами) сейчас таковы:\n" +
                                 $"Имя процесса видеоплеера: {Settings.Default.VideoPlayerProcessName}\n" +
                                 $"Горячие клавиши видеоплеера:\n" +
-                                $"Паузы — {videoplayerPauseKey}, смены на следующие субтитры — {videoplayerNextSubtitles}, на предыдущие — {videoplayerPreviousSubtitles}.\n\n" +
+                                $"Паузы — {videoplayerPauseKey}, смены на следующие субтитры — {videoplayerNextSubtitles}, " +
+                                $"на предыдущие — {videoplayerPreviousSubtitles}.\n\n" +
                                 $"Горячие клавиши Bilingual Subtitler: {bilingualSubtitlesHotkeys}\n\n" +
-                                $"Для работы горячих клавиш Bilingual Subtitler требуется запуск от имени администратора!",
-                    "Первый запуск Bilingual Subtitler", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                $"Для работы горячих клавиш Bilingual Subtitler требуется запуск от имени администратора!\n"+
+                                $"Проверьте, возможно параметры вашего видеоплеера отличаются от заданных по умолчанию " +
+                                $"(параметры по умолчанию — для немодифицированного 64-разрядного Media Player Classic Homecinema.",
+                                $"Первый запуск Bilingual Subtitler", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 Settings.Default.FirstLaunch = false;
                 Settings.Default.Save();
@@ -283,7 +286,7 @@ namespace BilingualSubtitler
 
             //Properties.Settings.Default.Save();
 
-            SetProgramSettings();
+            SetProgramAccordingToSettings();
 
             m_changeVideoAndSubtitlesComboBoxesDelegate = ChangeVideoAndSubtitlesComboBoxesHandler;
 
@@ -292,7 +295,7 @@ namespace BilingualSubtitler
 
         }
 
-        private void SetProgramSettings()
+        private void SetProgramAccordingToSettings()
         {
             // Хоткеи программы
             m_keyboardHookManager.Stop();
@@ -680,11 +683,13 @@ namespace BilingualSubtitler
                         // Перенос
                         if (subtitle.Text.Contains("\r\n"))
                             // TODO Убирание переносов строк в рус сабах
+                            //subtitle.Text = subtitle.Text.Replace("\r\n", "\\N");
                             subtitle.Text = subtitle.Text.Replace("\r\n", i == 0 ? "\\N" : " ");
                         else
                         if (subtitle.Text.Contains("\n"))
                             // TODO Убирание переносов строк в рус сабах
                             subtitle.Text = subtitle.Text.Replace("\n", i == 0 ? "\\N" : " ");
+                            //subtitle.Text = subtitle.Text.Replace("\n", "\\N");
 
 
                         assSB.AppendLine($"Dialogue: 0," +
@@ -985,6 +990,8 @@ namespace BilingualSubtitler
                        (extension.Length));
 
                     finalSubtitlesFilesPathBeginningRichTextBox.Text = originalFilePathPart;
+                    finalSubtitlesFilesPathBeginningRichTextBox.Tag = extension;
+
                 }
 
                 subtitlesInfo.BackgroundWorker.RunWorkerAsync(openFileDialog.FileName);
@@ -1372,7 +1379,7 @@ namespace BilingualSubtitler
             keySettingForm.ShowDialog();
             keySettingForm.Dispose();
 
-            SetProgramSettings();
+            SetProgramAccordingToSettings();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -1451,6 +1458,7 @@ namespace BilingualSubtitler
                 var finalSubtitlesFilesPathFileInfo = new FileInfo(openFileDialog.FileName);
                 finalSubtitlesFilesPathBeginningRichTextBox.Text = finalSubtitlesFilesPathFileInfo.FullName.Substring(0,
                     finalSubtitlesFilesPathFileInfo.FullName.Length - finalSubtitlesFilesPathFileInfo.Extension.Length);
+                finalSubtitlesFilesPathBeginningRichTextBox.Tag = finalSubtitlesFilesPathFileInfo.Extension;
             }
 
             openFileDialog.Dispose();
@@ -1460,6 +1468,13 @@ namespace BilingualSubtitler
         {
             using var formAbout = new FormAbout();
             formAbout.ShowDialog();
+        }
+
+        private void playVideoButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(finalSubtitlesFilesPathBeginningRichTextBox.Text +
+                // В тэге ТекстБокса должно лежать расширение
+                finalSubtitlesFilesPathBeginningRichTextBox.Tag);
         }
     }
     public class SubtitlesBackgroundWorker : BackgroundWorker
