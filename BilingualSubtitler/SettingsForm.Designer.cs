@@ -45,7 +45,11 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.secondAndThirdSubtitlesAtTheTopOfScreenCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.thirdRussianSubtitlesInOneLineCheckBox = new System.Windows.Forms.CheckBox();
+            this.thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label36 = new System.Windows.Forms.Label();
             this.thirdRussianSubtitlesTransparencyPercentageNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.thirdRussianSubtitlesShadowNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.thirdRussianSubtitlesOutlineNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -59,6 +63,9 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.secondRussianSubtitlesInOneLineCheckBox = new System.Windows.Forms.CheckBox();
+            this.secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label35 = new System.Windows.Forms.Label();
             this.secondRussianSubtitlesTransparencyPercentageNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.secondRussianSubtitlesShadowNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.secondRussianSubtitlesOutlineNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -72,6 +79,9 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.firstRussianSubtitlesInOneLineCheckBox = new System.Windows.Forms.CheckBox();
+            this.firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label34 = new System.Windows.Forms.Label();
             this.firstRussianSubtitlesTransparencyPercentageNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.firstRussianSubtitlesShadowNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.firstRussianSubtitlesOutlineNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -87,6 +97,9 @@
             this.changeRussianSubtitlesStylesAccordingToOriginalCheckBox = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.originalSubtitlesInOneLineCheckBox = new System.Windows.Forms.CheckBox();
+            this.originalSubtitlesShadowTransparencyPercentageNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label33 = new System.Windows.Forms.Label();
             this.originalSubtitlesTransparencyPercentageNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.originalSubtitlesShadowNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.originalSubtitlesOutlineNumericUpDown = new System.Windows.Forms.NumericUpDown();
@@ -121,42 +134,33 @@
             this.videoPlayerPauseButtonTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.originalSubtitlesShadowTransparencyPercentageNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.label33 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label34 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.label35 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.label36 = new System.Windows.Forms.Label();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hotkeysDataGridView)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdRussianSubtitlesTransparencyPercentageNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdRussianSubtitlesShadowNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdRussianSubtitlesOutlineNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdRussianSubtitlesSizeNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdRussianSubtitlesMarginNumericUpDown)).BeginInit();
             this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondRussianSubtitlesTransparencyPercentageNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondRussianSubtitlesShadowNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondRussianSubtitlesOutlineNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondRussianSubtitlesSizeNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondRussianSubtitlesMarginNumericUpDown)).BeginInit();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstRussianSubtitlesTransparencyPercentageNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstRussianSubtitlesShadowNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstRussianSubtitlesOutlineNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstRussianSubtitlesSizeNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstRussianSubtitlesMarginNumericUpDown)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.originalSubtitlesShadowTransparencyPercentageNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.originalSubtitlesTransparencyPercentageNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.originalSubtitlesShadowNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.originalSubtitlesOutlineNumericUpDown)).BeginInit();
@@ -164,10 +168,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.originalSubtitlesMarginNumericUpDown)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.originalSubtitlesShadowTransparencyPercentageNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBoxLabelYouNeedToGetAPIKey
@@ -293,7 +293,7 @@
             this.groupBox2.Controls.Add(this.hotkeysDataGridView);
             this.groupBox2.Location = new System.Drawing.Point(15, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(180, 443);
+            this.groupBox2.Size = new System.Drawing.Size(180, 450);
             this.groupBox2.TabIndex = 46;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Горячие клавиши программы";
@@ -344,7 +344,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBox6);
+            this.groupBox3.Controls.Add(this.secondAndThirdSubtitlesAtTheTopOfScreenCheckBox);
             this.groupBox3.Controls.Add(this.groupBox9);
             this.groupBox3.Controls.Add(this.groupBox8);
             this.groupBox3.Controls.Add(this.groupBox7);
@@ -353,15 +353,27 @@
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Location = new System.Drawing.Point(510, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(561, 443);
+            this.groupBox3.Size = new System.Drawing.Size(561, 450);
             this.groupBox3.TabIndex = 47;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Настройки вида субтитров";
             // 
+            // secondAndThirdSubtitlesAtTheTopOfScreenCheckBox
+            // 
+            this.secondAndThirdSubtitlesAtTheTopOfScreenCheckBox.AutoSize = true;
+            this.secondAndThirdSubtitlesAtTheTopOfScreenCheckBox.Checked = true;
+            this.secondAndThirdSubtitlesAtTheTopOfScreenCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.secondAndThirdSubtitlesAtTheTopOfScreenCheckBox.Location = new System.Drawing.Point(5, 425);
+            this.secondAndThirdSubtitlesAtTheTopOfScreenCheckBox.Name = "secondAndThirdSubtitlesAtTheTopOfScreenCheckBox";
+            this.secondAndThirdSubtitlesAtTheTopOfScreenCheckBox.Size = new System.Drawing.Size(262, 17);
+            this.secondAndThirdSubtitlesAtTheTopOfScreenCheckBox.TabIndex = 96;
+            this.secondAndThirdSubtitlesAtTheTopOfScreenCheckBox.Text = "2 и 3 переведенные субтитры — сверху экрана";
+            this.secondAndThirdSubtitlesAtTheTopOfScreenCheckBox.UseVisualStyleBackColor = true;
+            // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.checkBox5);
-            this.groupBox9.Controls.Add(this.numericUpDown4);
+            this.groupBox9.Controls.Add(this.thirdRussianSubtitlesInOneLineCheckBox);
+            this.groupBox9.Controls.Add(this.thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown);
             this.groupBox9.Controls.Add(this.label36);
             this.groupBox9.Controls.Add(this.thirdRussianSubtitlesTransparencyPercentageNumericUpDown);
             this.groupBox9.Controls.Add(this.thirdRussianSubtitlesShadowNumericUpDown);
@@ -381,6 +393,35 @@
             this.groupBox9.TabIndex = 95;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "3-и субтитры";
+            // 
+            // thirdRussianSubtitlesInOneLineCheckBox
+            // 
+            this.thirdRussianSubtitlesInOneLineCheckBox.AutoSize = true;
+            this.thirdRussianSubtitlesInOneLineCheckBox.Checked = true;
+            this.thirdRussianSubtitlesInOneLineCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.thirdRussianSubtitlesInOneLineCheckBox.Location = new System.Drawing.Point(9, 293);
+            this.thirdRussianSubtitlesInOneLineCheckBox.Name = "thirdRussianSubtitlesInOneLineCheckBox";
+            this.thirdRussianSubtitlesInOneLineCheckBox.Size = new System.Drawing.Size(76, 30);
+            this.thirdRussianSubtitlesInOneLineCheckBox.TabIndex = 96;
+            this.thirdRussianSubtitlesInOneLineCheckBox.Text = "Убрать\r\nпереносы";
+            this.thirdRussianSubtitlesInOneLineCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown
+            // 
+            this.thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Enabled = false;
+            this.thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Location = new System.Drawing.Point(9, 263);
+            this.thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Name = "thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown";
+            this.thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Size = new System.Drawing.Size(91, 20);
+            this.thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown.TabIndex = 94;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(9, 248);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(90, 13);
+            this.label36.TabIndex = 93;
+            this.label36.Text = "Прозрач. тени,%";
             // 
             // thirdRussianSubtitlesTransparencyPercentageNumericUpDown
             // 
@@ -492,8 +533,8 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.checkBox4);
-            this.groupBox8.Controls.Add(this.numericUpDown3);
+            this.groupBox8.Controls.Add(this.secondRussianSubtitlesInOneLineCheckBox);
+            this.groupBox8.Controls.Add(this.secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown);
             this.groupBox8.Controls.Add(this.label35);
             this.groupBox8.Controls.Add(this.secondRussianSubtitlesTransparencyPercentageNumericUpDown);
             this.groupBox8.Controls.Add(this.secondRussianSubtitlesShadowNumericUpDown);
@@ -513,6 +554,35 @@
             this.groupBox8.TabIndex = 94;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "2-е субтитры";
+            // 
+            // secondRussianSubtitlesInOneLineCheckBox
+            // 
+            this.secondRussianSubtitlesInOneLineCheckBox.AutoSize = true;
+            this.secondRussianSubtitlesInOneLineCheckBox.Checked = true;
+            this.secondRussianSubtitlesInOneLineCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.secondRussianSubtitlesInOneLineCheckBox.Location = new System.Drawing.Point(9, 293);
+            this.secondRussianSubtitlesInOneLineCheckBox.Name = "secondRussianSubtitlesInOneLineCheckBox";
+            this.secondRussianSubtitlesInOneLineCheckBox.Size = new System.Drawing.Size(76, 30);
+            this.secondRussianSubtitlesInOneLineCheckBox.TabIndex = 96;
+            this.secondRussianSubtitlesInOneLineCheckBox.Text = "Убрать\r\nпереносы";
+            this.secondRussianSubtitlesInOneLineCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown
+            // 
+            this.secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Enabled = false;
+            this.secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Location = new System.Drawing.Point(9, 263);
+            this.secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Name = "secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown";
+            this.secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Size = new System.Drawing.Size(91, 20);
+            this.secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown.TabIndex = 94;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(9, 248);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(90, 13);
+            this.label35.TabIndex = 93;
+            this.label35.Text = "Прозрач. тени,%";
             // 
             // secondRussianSubtitlesTransparencyPercentageNumericUpDown
             // 
@@ -624,8 +694,8 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.checkBox3);
-            this.groupBox7.Controls.Add(this.numericUpDown2);
+            this.groupBox7.Controls.Add(this.firstRussianSubtitlesInOneLineCheckBox);
+            this.groupBox7.Controls.Add(this.firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown);
             this.groupBox7.Controls.Add(this.label34);
             this.groupBox7.Controls.Add(this.firstRussianSubtitlesTransparencyPercentageNumericUpDown);
             this.groupBox7.Controls.Add(this.firstRussianSubtitlesShadowNumericUpDown);
@@ -645,6 +715,35 @@
             this.groupBox7.TabIndex = 93;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "1-е субтитры";
+            // 
+            // firstRussianSubtitlesInOneLineCheckBox
+            // 
+            this.firstRussianSubtitlesInOneLineCheckBox.AutoSize = true;
+            this.firstRussianSubtitlesInOneLineCheckBox.Checked = true;
+            this.firstRussianSubtitlesInOneLineCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.firstRussianSubtitlesInOneLineCheckBox.Location = new System.Drawing.Point(12, 293);
+            this.firstRussianSubtitlesInOneLineCheckBox.Name = "firstRussianSubtitlesInOneLineCheckBox";
+            this.firstRussianSubtitlesInOneLineCheckBox.Size = new System.Drawing.Size(76, 30);
+            this.firstRussianSubtitlesInOneLineCheckBox.TabIndex = 96;
+            this.firstRussianSubtitlesInOneLineCheckBox.Text = "Убрать\r\nпереносы";
+            this.firstRussianSubtitlesInOneLineCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown
+            // 
+            this.firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Location = new System.Drawing.Point(9, 263);
+            this.firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Name = "firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown";
+            this.firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Size = new System.Drawing.Size(91, 20);
+            this.firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown.TabIndex = 94;
+            this.firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown.ValueChanged += new System.EventHandler(this.firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown_ValueChanged);
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(9, 248);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(90, 13);
+            this.label34.TabIndex = 93;
+            this.label34.Text = "Прозрач. тени,%";
             // 
             // firstRussianSubtitlesTransparencyPercentageNumericUpDown
             // 
@@ -761,11 +860,9 @@
             this.changeRussianSubtitlesStylesAccordingToOriginalCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.changeRussianSubtitlesStylesAccordingToOriginalCheckBox.Location = new System.Drawing.Point(5, 377);
             this.changeRussianSubtitlesStylesAccordingToOriginalCheckBox.Name = "changeRussianSubtitlesStylesAccordingToOriginalCheckBox";
-            this.changeRussianSubtitlesStylesAccordingToOriginalCheckBox.Size = new System.Drawing.Size(465, 43);
+            this.changeRussianSubtitlesStylesAccordingToOriginalCheckBox.Size = new System.Drawing.Size(473, 43);
             this.changeRussianSubtitlesStylesAccordingToOriginalCheckBox.TabIndex = 68;
-            this.changeRussianSubtitlesStylesAccordingToOriginalCheckBox.Text = "Изменять параметры вида всех потоков переведенных субтитров соответственно \r\nнаст" +
-    "ройкам вида оригинальных субтитров \r\n(и прозрачность 2 и 3 переведенных — соотве" +
-    "тственно прозрачности 1 переведенных)\r\n";
+            this.changeRussianSubtitlesStylesAccordingToOriginalCheckBox.Text = resources.GetString("changeRussianSubtitlesStylesAccordingToOriginalCheckBox.Text");
             this.changeRussianSubtitlesStylesAccordingToOriginalCheckBox.UseVisualStyleBackColor = true;
             this.changeRussianSubtitlesStylesAccordingToOriginalCheckBox.CheckedChanged += new System.EventHandler(this.changeRussianSubtitlesStylesAccordingToOriginalCheckBox_CheckedChanged);
             // 
@@ -780,7 +877,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.checkBox1);
+            this.groupBox4.Controls.Add(this.originalSubtitlesInOneLineCheckBox);
             this.groupBox4.Controls.Add(this.originalSubtitlesShadowTransparencyPercentageNumericUpDown);
             this.groupBox4.Controls.Add(this.label33);
             this.groupBox4.Controls.Add(this.originalSubtitlesTransparencyPercentageNumericUpDown);
@@ -801,6 +898,34 @@
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Оригинальные\nсубтитры";
+            // 
+            // originalSubtitlesInOneLineCheckBox
+            // 
+            this.originalSubtitlesInOneLineCheckBox.AutoSize = true;
+            this.originalSubtitlesInOneLineCheckBox.Checked = true;
+            this.originalSubtitlesInOneLineCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.originalSubtitlesInOneLineCheckBox.Location = new System.Drawing.Point(12, 313);
+            this.originalSubtitlesInOneLineCheckBox.Name = "originalSubtitlesInOneLineCheckBox";
+            this.originalSubtitlesInOneLineCheckBox.Size = new System.Drawing.Size(116, 17);
+            this.originalSubtitlesInOneLineCheckBox.TabIndex = 95;
+            this.originalSubtitlesInOneLineCheckBox.Text = "Убрать переносы";
+            this.originalSubtitlesInOneLineCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // originalSubtitlesShadowTransparencyPercentageNumericUpDown
+            // 
+            this.originalSubtitlesShadowTransparencyPercentageNumericUpDown.Location = new System.Drawing.Point(9, 279);
+            this.originalSubtitlesShadowTransparencyPercentageNumericUpDown.Name = "originalSubtitlesShadowTransparencyPercentageNumericUpDown";
+            this.originalSubtitlesShadowTransparencyPercentageNumericUpDown.Size = new System.Drawing.Size(91, 20);
+            this.originalSubtitlesShadowTransparencyPercentageNumericUpDown.TabIndex = 94;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(9, 264);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(178, 13);
+            this.label33.TabIndex = 93;
+            this.label33.Text = "Прозрачность тени (в процентах):";
             // 
             // originalSubtitlesTransparencyPercentageNumericUpDown
             // 
@@ -1139,132 +1264,6 @@
             this.label5.TabIndex = 68;
             this.label5.Text = "Горячие клавиши в видеоплеере:";
             // 
-            // originalSubtitlesShadowTransparencyPercentageNumericUpDown
-            // 
-            this.originalSubtitlesShadowTransparencyPercentageNumericUpDown.Location = new System.Drawing.Point(9, 279);
-            this.originalSubtitlesShadowTransparencyPercentageNumericUpDown.Name = "originalSubtitlesShadowTransparencyPercentageNumericUpDown";
-            this.originalSubtitlesShadowTransparencyPercentageNumericUpDown.Size = new System.Drawing.Size(91, 20);
-            this.originalSubtitlesShadowTransparencyPercentageNumericUpDown.TabIndex = 94;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(9, 264);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(178, 13);
-            this.label33.TabIndex = 93;
-            this.label33.Text = "Прозрачность тени (в процентах):";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(12, 313);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(116, 17);
-            this.checkBox1.TabIndex = 95;
-            this.checkBox1.Text = "Убрать переносы";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(9, 263);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(91, 20);
-            this.numericUpDown2.TabIndex = 94;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(9, 248);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(90, 13);
-            this.label34.TabIndex = 93;
-            this.label34.Text = "Прозрач. тени,%";
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Enabled = false;
-            this.numericUpDown3.Location = new System.Drawing.Point(9, 263);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(91, 20);
-            this.numericUpDown3.TabIndex = 94;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(9, 248);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(90, 13);
-            this.label35.TabIndex = 93;
-            this.label35.Text = "Прозрач. тени,%";
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Enabled = false;
-            this.numericUpDown4.Location = new System.Drawing.Point(9, 263);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(91, 20);
-            this.numericUpDown4.TabIndex = 94;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(9, 248);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(90, 13);
-            this.label36.TabIndex = 93;
-            this.label36.Text = "Прозрач. тени,%";
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Checked = true;
-            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox3.Location = new System.Drawing.Point(12, 293);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(76, 30);
-            this.checkBox3.TabIndex = 96;
-            this.checkBox3.Text = "Убрать\r\nпереносы";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Checked = true;
-            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox4.Location = new System.Drawing.Point(9, 293);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(76, 30);
-            this.checkBox4.TabIndex = 96;
-            this.checkBox4.Text = "Убрать\r\nпереносы";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Checked = true;
-            this.checkBox5.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox5.Location = new System.Drawing.Point(9, 293);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(76, 30);
-            this.checkBox5.TabIndex = 96;
-            this.checkBox5.Text = "Убрать\r\nпереносы";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Checked = true;
-            this.checkBox6.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox6.Location = new System.Drawing.Point(5, 422);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(262, 17);
-            this.checkBox6.TabIndex = 96;
-            this.checkBox6.Text = "2 и 3 переведенные субтитры — сверху экрана";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1292,6 +1291,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdRussianSubtitlesTransparencyPercentageNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdRussianSubtitlesShadowNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.thirdRussianSubtitlesOutlineNumericUpDown)).EndInit();
@@ -1299,6 +1299,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.thirdRussianSubtitlesMarginNumericUpDown)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondRussianSubtitlesTransparencyPercentageNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondRussianSubtitlesShadowNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondRussianSubtitlesOutlineNumericUpDown)).EndInit();
@@ -1306,6 +1307,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.secondRussianSubtitlesMarginNumericUpDown)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstRussianSubtitlesTransparencyPercentageNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstRussianSubtitlesShadowNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstRussianSubtitlesOutlineNumericUpDown)).EndInit();
@@ -1313,6 +1315,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.firstRussianSubtitlesMarginNumericUpDown)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.originalSubtitlesShadowTransparencyPercentageNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.originalSubtitlesTransparencyPercentageNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.originalSubtitlesShadowNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.originalSubtitlesOutlineNumericUpDown)).EndInit();
@@ -1322,10 +1325,6 @@
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.originalSubtitlesShadowTransparencyPercentageNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1424,18 +1423,18 @@
         private System.Windows.Forms.NumericUpDown originalSubtitlesShadowNumericUpDown;
         private System.Windows.Forms.NumericUpDown originalSubtitlesOutlineNumericUpDown;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.CheckBox thirdRussianSubtitlesInOneLineCheckBox;
+        private System.Windows.Forms.NumericUpDown thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.CheckBox secondRussianSubtitlesInOneLineCheckBox;
+        private System.Windows.Forms.NumericUpDown secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.CheckBox firstRussianSubtitlesInOneLineCheckBox;
+        private System.Windows.Forms.NumericUpDown firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox originalSubtitlesInOneLineCheckBox;
         private System.Windows.Forms.NumericUpDown originalSubtitlesShadowTransparencyPercentageNumericUpDown;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox secondAndThirdSubtitlesAtTheTopOfScreenCheckBox;
     }
 }

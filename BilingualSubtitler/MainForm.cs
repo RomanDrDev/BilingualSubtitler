@@ -533,7 +533,7 @@ namespace BilingualSubtitler
             try
             {
                 doc = DocX.Load(pathToDOCXFile);
-                
+
             }
             catch (Exception ex)
             {
@@ -554,7 +554,7 @@ namespace BilingualSubtitler
         private Subtitle[] ReadSRTMarkup(string[] readedLines)
         {
             var subsLines = 0;
-             
+
             foreach (string line in readedLines)
             {
                 if (line.Contains("-->"))
@@ -603,9 +603,17 @@ namespace BilingualSubtitler
             {
                 if (readedLines[i].Text.Contains("->"))
                 {
-                    subtitles[currentSubtitleIndex] = new Subtitle(
-                        readedLines[i].Text,
-                        (readedLines[i + 1].Text));
+                    try
+                    {
+                        subtitles[currentSubtitleIndex] = new Subtitle(
+                            readedLines[i].Text,
+                            (readedLines[i + 1].Text));
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Не удался парсинг субтитра из\n{readedLines[i].Text}\n{readedLines[i + 1].Text}\n!\n\nОшибка:{ex.ToString()}",
+                            "Не удался парсинг субтитра", MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+                    }
 
                     i += 2;
 
@@ -658,6 +666,7 @@ namespace BilingualSubtitler
             var subtitleStyleNamePostfix = " sub stream";
 
             string[] styleComponents = null;
+            bool subtitleInOneLine = false;
             for (int i = 0; i < subtitlesAndTheirColorsPairs.Length; i++)
             {
                 switch (i)
@@ -692,8 +701,10 @@ namespace BilingualSubtitler
 
                 var transparencyPercentage = styleComponents[5];
                 var transparency = ((int)(float.Parse(transparencyPercentage) / 100f * 255f)).ToString("X2");
-                var shadowTransparencyPercentage = "50";
+                var shadowTransparencyPercentage = styleComponents[6];
                 var shadowTransparency = ((int)(float.Parse(shadowTransparencyPercentage) / 100f * 255f)).ToString("X2");
+
+                subtitleInOneLine = styleComponents[7] == "1";
 
                 //((int)((int.Parse(transparencyPercentage) == 0 ? 100f : float.Parse(transparencyPercentage)) / 100f
                 //// Иначе при прозрачности в 0 и тень становится полностью непрозрачной
@@ -745,24 +756,24 @@ namespace BilingualSubtitler
                 {
                     foreach (var subtitle in subtitles)
                     {
-                        // Перенос
-                        if (subtitle.Text.Contains("\r\n"))
-                            // TODO Убирание переносов строк в рус сабах
-                            //subtitle.Text = subtitle.Text.Replace("\r\n", "\\N");
-                            subtitle.Text = subtitle.Text.Replace("\r\n", i == 0 || i == 3 ? "\\N" : " ");
-                        else
-                        if (subtitle.Text.Contains("\n"))
-                            // TODO Убирание переносов строк в рус сабах
-                            subtitle.Text = subtitle.Text.Replace("\n", i == 0 || i == 3 ? "\\N" : " ");
-                        //subtitle.Text = subtitle.Text.Replace("\n", "\\N");
+                        if (subtitle != null)
+                        {
+                            // Перенос
+                            if (subtitle.Text.Contains("\r\n"))
+                                subtitle.Text = subtitle.Text.Replace("\r\n", subtitleInOneLine ? " " : "\\N");
+                            else
+                            if (subtitle.Text.Contains("\n"))
+                                subtitle.Text = subtitle.Text.Replace("\n", subtitleInOneLine ? " " : "\\N");
+                            //subtitle.Text = subtitle.Text.Replace("\n", "\\N");
 
 
-                        assSB.AppendLine($"Dialogue: 0," +
-                                         $"{subtitle.Start.ToString(assTimeFormat)}," +
-                                         $"{subtitle.End.ToString(assTimeFormat)}," +
-                                         $"{i}{subtitleStyleNamePostfix}," +
-                                         $",0,0,0,," +
-                                         $"{subtitle.Text}");
+                            assSB.AppendLine($"Dialogue: 0," +
+                                             $"{subtitle.Start.ToString(assTimeFormat)}," +
+                                             $"{subtitle.End.ToString(assTimeFormat)}," +
+                                             $"{i}{subtitleStyleNamePostfix}," +
+                                             $",0,0,0,," +
+                                             $"{subtitle.Text}");
+                        }
                     }
                 }
             }
@@ -1022,7 +1033,7 @@ namespace BilingualSubtitler
 
         private void OpenFileAndReadSubtitlesFromFile(SubtitlesType subtitlesType)
         {
-           string formats = "Файлы Matroska Video (.mkv), файлы SubRip Text (.srt), файлы DocX (.docx) |*.mkv; *.srt; *.docx";
+            string formats = "Файлы Matroska Video (.mkv), файлы SubRip Text (.srt), файлы DocX (.docx) |*.mkv; *.srt; *.docx";
 
             using var openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = formats;
@@ -1035,7 +1046,7 @@ namespace BilingualSubtitler
 
         }
 
-        private void ReadSubtitlesFromFile (string fileName, SubtitlesType subtitlesType)
+        private void ReadSubtitlesFromFile(string fileName, SubtitlesType subtitlesType)
         {
             var subtitlesInfo = m_subtitles[subtitlesType];
 
@@ -1062,11 +1073,16 @@ namespace BilingualSubtitler
                    (extension.Length));
 
                 finalSubtitlesFilesPathBeginningRichTextBox.Text = originalFilePathPart;
-                finalSubtitlesFilesPathBeginningRichTextBox.Tag = extension;
 
+                if (extension == ".mkv")
+                {
+
+                    finalSubtitlesFilesPathBeginningRichTextBox.Tag = extension;
+                    playVideoButton.Text = $"{m_playVideoButtonDefaultText}\n({extension})";
+                }
+
+                subtitlesInfo.BackgroundWorker.RunWorkerAsync(fileName);
             }
-
-            subtitlesInfo.BackgroundWorker.RunWorkerAsync(fileName);
         }
 
         private void readSubtitlesBackgroundWorker_DoWork(object sender, DoWorkEventArgs eventArgs)
@@ -1416,6 +1432,7 @@ namespace BilingualSubtitler
             var senderButton = (Button)sender;
 
             var colorPickingDialog = new ColorDialog();
+            colorPickingDialog.CustomColors = new int[] { ColorTranslator.ToOle(Color.Gold) };
             var dialogResult = colorPickingDialog.ShowDialog();
             if (dialogResult == DialogResult.OK)
             {
@@ -1425,7 +1442,7 @@ namespace BilingualSubtitler
 
         private void openSubtitles_DragEnter(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop)) 
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
                 e.Effect = DragDropEffects.Copy;
         }
 
@@ -1599,6 +1616,8 @@ namespace BilingualSubtitler
                 finalSubtitlesFilesPathBeginningRichTextBox.Text = finalSubtitlesFilesPathFileInfo.FullName.Substring(0,
                     finalSubtitlesFilesPathFileInfo.FullName.Length - finalSubtitlesFilesPathFileInfo.Extension.Length);
                 finalSubtitlesFilesPathBeginningRichTextBox.Tag = finalSubtitlesFilesPathFileInfo.Extension;
+
+                playVideoButton.Text = $"{m_playVideoButtonDefaultText}\n({finalSubtitlesFilesPathFileInfo.Extension})";
             }
 
             openFileDialog.Dispose();
@@ -1637,7 +1656,7 @@ namespace BilingualSubtitler
                 var timeFormat = @"hh\:mm\:ss\,fff";
 
                 var doc = DocX.Create(saveFileDialog.FileName);
-                for(int i=0; i< subtitlesInfo.Subtitles.Length; i++)
+                for (int i = 0; i < subtitlesInfo.Subtitles.Length; i++)
                 {
                     var subtitle = subtitlesInfo.Subtitles[i];
 

@@ -62,6 +62,7 @@ namespace BilingualSubtitler
 
             changeRussianSubtitlesStylesAccordingToOriginalCheckBox.Checked =
                 Properties.Settings.Default.ChangeRussianSubtitlesStylesAccordingToOriginal;
+            secondAndThirdSubtitlesAtTheTopOfScreenCheckBox.Checked = Properties.Settings.Default.SecondAndThirdRussianSubtitlesAtTopOfTheScreen;
 
             var originalSubtitlesStyle = Properties.Settings.Default.OriginalSubtitlesStyleString.Split(';');
             foreach (var fontItem in originalSubtitlesFontComboBox.Items)
@@ -79,6 +80,8 @@ namespace BilingualSubtitler
             originalSubtitlesOutlineNumericUpDown.Value = decimal.Parse(originalSubtitlesStyle[3]);
             originalSubtitlesShadowNumericUpDown.Value = decimal.Parse(originalSubtitlesStyle[4]);
             originalSubtitlesTransparencyPercentageNumericUpDown.Value = decimal.Parse(originalSubtitlesStyle[5]);
+            originalSubtitlesShadowTransparencyPercentageNumericUpDown.Value = decimal.Parse(originalSubtitlesStyle[6]);
+            originalSubtitlesInOneLineCheckBox.Checked = originalSubtitlesStyle[7] == "1";
 
             var firstRussianSubtitlesStyle = Properties.Settings.Default.FirstRussianSubtitlesStyleString.Split(';');
             foreach (var fontItem in firstRussianSubtitlesFontComboBox.Items)
@@ -96,6 +99,8 @@ namespace BilingualSubtitler
             firstRussianSubtitlesOutlineNumericUpDown.Value = decimal.Parse(firstRussianSubtitlesStyle[3]);
             firstRussianSubtitlesShadowNumericUpDown.Value = decimal.Parse(firstRussianSubtitlesStyle[4]);
             firstRussianSubtitlesTransparencyPercentageNumericUpDown.Value = decimal.Parse(firstRussianSubtitlesStyle[5]);
+            firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Value = decimal.Parse(firstRussianSubtitlesStyle[6]);
+            firstRussianSubtitlesInOneLineCheckBox.Checked = firstRussianSubtitlesStyle[7] == "1";
 
             var secondRussianSubtitlesStyle = Properties.Settings.Default.SecondRussianSubtitlesStyleString.Split(';');
             foreach (var fontItem in secondRussianSubtitlesFontComboBox.Items)
@@ -113,6 +118,8 @@ namespace BilingualSubtitler
             secondRussianSubtitlesOutlineNumericUpDown.Value = decimal.Parse(secondRussianSubtitlesStyle[3]);
             secondRussianSubtitlesShadowNumericUpDown.Value = decimal.Parse(secondRussianSubtitlesStyle[4]);
             secondRussianSubtitlesTransparencyPercentageNumericUpDown.Value = decimal.Parse(secondRussianSubtitlesStyle[5]);
+            secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Value = decimal.Parse(secondRussianSubtitlesStyle[6]);
+            secondRussianSubtitlesInOneLineCheckBox.Checked = secondRussianSubtitlesStyle[7] == "1";
 
             var thirdRussianSubtitlesStyle = Properties.Settings.Default.ThirdRussianSubtitlesStyleString.Split(';');
             foreach (var fontItem in thirdRussianSubtitlesFontComboBox.Items)
@@ -130,12 +137,16 @@ namespace BilingualSubtitler
             thirdRussianSubtitlesOutlineNumericUpDown.Value = decimal.Parse(thirdRussianSubtitlesStyle[3]);
             thirdRussianSubtitlesShadowNumericUpDown.Value = decimal.Parse(thirdRussianSubtitlesStyle[4]);
             thirdRussianSubtitlesTransparencyPercentageNumericUpDown.Value = decimal.Parse(thirdRussianSubtitlesStyle[5]);
+            thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Value = decimal.Parse(thirdRussianSubtitlesStyle[6]);
+            thirdRussianSubtitlesInOneLineCheckBox.Checked = thirdRussianSubtitlesStyle[7] == "1";
 
             richTextBoxForYandexApiKeyInSeparateForm.Text = Properties.Settings.Default.YandexTranslatorAPIKey;
         }
 
         private void changeRussianSubtitlesStylesAccordingToOriginalCheckBox_CheckedChanged(object sender, EventArgs e)
         {
+            secondAndThirdSubtitlesAtTheTopOfScreenCheckBox.Enabled =
+            //
             firstRussianSubtitlesFontComboBox.Enabled = firstRussianSubtitlesMarginNumericUpDown.Enabled =
                 firstRussianSubtitlesShadowNumericUpDown.Enabled =
                     firstRussianSubtitlesOutlineNumericUpDown.Enabled = firstRussianSubtitlesSizeNumericUpDown.Enabled =
@@ -147,6 +158,7 @@ namespace BilingualSubtitler
                                         secondRussianSubtitlesOutlineNumericUpDown.Enabled =
                                             secondRussianSubtitlesSizeNumericUpDown.Enabled =
                                                 secondRussianSubtitlesTransparencyPercentageNumericUpDown.Enabled =
+                                                secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Enabled =
                                                     // Третьи
                                                     thirdRussianSubtitlesFontComboBox.Enabled =
                                                         thirdRussianSubtitlesMarginNumericUpDown.Enabled =
@@ -154,6 +166,8 @@ namespace BilingualSubtitler
                                                                 thirdRussianSubtitlesOutlineNumericUpDown.Enabled =
                                                                     thirdRussianSubtitlesSizeNumericUpDown.Enabled =
                                                                         thirdRussianSubtitlesTransparencyPercentageNumericUpDown
+                                                                                .Enabled =
+                                                                                thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown
                                                                                 .Enabled =
                                                                             //
                                                                             !changeRussianSubtitlesStylesAccordingToOriginalCheckBox.Checked;
@@ -242,6 +256,8 @@ namespace BilingualSubtitler
             Properties.Settings.Default.CreateOriginalSubtitlesFile = CreateOriginalSubtitlesFileCheckBox.Checked;
             Properties.Settings.Default.OriginalSubtitlesFileNameEnding = originalSubtitlesPathEndingTextBox.Text;
             Properties.Settings.Default.BilingualSubtitlesFileNameEnding = bilingualSubtitlesPathEndingTextBox.Text;
+            Properties.Settings.Default.ChangeRussianSubtitlesStylesAccordingToOriginal = changeRussianSubtitlesStylesAccordingToOriginalCheckBox.Checked;
+            Properties.Settings.Default.SecondAndThirdRussianSubtitlesAtTopOfTheScreen = secondAndThirdSubtitlesAtTheTopOfScreenCheckBox.Checked;
 
             Properties.Settings.Default.YandexTranslatorAPIKey =
                 richTextBoxForYandexApiKeyInSeparateForm.Text.Substring(0,
@@ -252,28 +268,36 @@ namespace BilingualSubtitler
                                                                        $"{originalSubtitlesSizeNumericUpDown.Value};" +
                                                                        $"{originalSubtitlesOutlineNumericUpDown.Value};" +
                                                                        $"{originalSubtitlesShadowNumericUpDown.Value};" +
-                                                                       $"{originalSubtitlesTransparencyPercentageNumericUpDown.Value}";
+                                                                       $"{originalSubtitlesTransparencyPercentageNumericUpDown.Value};" +
+                                                                       $"{originalSubtitlesShadowTransparencyPercentageNumericUpDown.Value};" +
+                                                                       $"{(originalSubtitlesInOneLineCheckBox.Checked ? 1 : 0)}";
 
             Properties.Settings.Default.FirstRussianSubtitlesStyleString = $"{firstRussianSubtitlesFontComboBox.Text};" +
                                                                        $"{firstRussianSubtitlesMarginNumericUpDown.Value};" +
                                                                        $"{firstRussianSubtitlesSizeNumericUpDown.Value};" +
                                                                        $"{firstRussianSubtitlesOutlineNumericUpDown.Value};" +
                                                                        $"{firstRussianSubtitlesShadowNumericUpDown.Value};" +
-                                                                       $"{firstRussianSubtitlesTransparencyPercentageNumericUpDown.Value}";
+                                                                       $"{firstRussianSubtitlesTransparencyPercentageNumericUpDown.Value};" +
+                                                                       $"{firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Value};" +
+                                                                       $"{(firstRussianSubtitlesInOneLineCheckBox.Checked ? 1 : 0)}";
 
             Properties.Settings.Default.SecondRussianSubtitlesStyleString = $"{secondRussianSubtitlesFontComboBox.Text};" +
                                                                        $"{secondRussianSubtitlesMarginNumericUpDown.Value};" +
                                                                        $"{secondRussianSubtitlesSizeNumericUpDown.Value};" +
                                                                        $"{secondRussianSubtitlesOutlineNumericUpDown.Value};" +
                                                                        $"{secondRussianSubtitlesShadowNumericUpDown.Value};" +
-                                                                       $"{secondRussianSubtitlesTransparencyPercentageNumericUpDown.Value}";
+                                                                       $"{secondRussianSubtitlesTransparencyPercentageNumericUpDown.Value};" +
+                                                                       $"{secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Value};" +
+                                                                       $"{(secondRussianSubtitlesInOneLineCheckBox.Checked ? 1 : 0)}";
 
             Properties.Settings.Default.ThirdRussianSubtitlesStyleString = $"{thirdRussianSubtitlesFontComboBox.Text};" +
                                                                        $"{thirdRussianSubtitlesMarginNumericUpDown.Value};" +
                                                                        $"{thirdRussianSubtitlesSizeNumericUpDown.Value};" +
                                                                        $"{thirdRussianSubtitlesOutlineNumericUpDown.Value};" +
                                                                        $"{thirdRussianSubtitlesShadowNumericUpDown.Value};" +
-                                                                       $"{thirdRussianSubtitlesTransparencyPercentageNumericUpDown.Value}";
+                                                                       $"{thirdRussianSubtitlesTransparencyPercentageNumericUpDown.Value};" +
+                                                                       $"{thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Value};" +
+                                                                       $"{(thirdRussianSubtitlesInOneLineCheckBox.Checked ? 1 : 0)}";
 
             Properties.Settings.Default.Save();
             this.DialogResult = DialogResult.OK;
@@ -444,19 +468,36 @@ namespace BilingualSubtitler
         {
             if (changeRussianSubtitlesStylesAccordingToOriginalCheckBox.Checked)
             {
-                firstRussianSubtitlesMarginNumericUpDown.Value =
-                    originalSubtitlesMarginNumericUpDown.Value +
-                    (2 * originalSubtitlesSizeNumericUpDown.Value +
-                     originalSubtitlesSizeNumericUpDown.Value / 10);
-                secondRussianSubtitlesMarginNumericUpDown.Value = originalSubtitlesMarginNumericUpDown.Value +
-                                                                  (2 * originalSubtitlesSizeNumericUpDown.Value +
-                                                                   originalSubtitlesSizeNumericUpDown.Value / 10) * 2;
+                if (secondAndThirdSubtitlesAtTheTopOfScreenCheckBox.Checked)
+                {
+                    var firstRussianSubtitlesMargin = originalSubtitlesMarginNumericUpDown.Value -
+                                                      (2 * originalSubtitlesSizeNumericUpDown.Value +
+                                                       originalSubtitlesSizeNumericUpDown.Value / 10);
+                    firstRussianSubtitlesMarginNumericUpDown.Value =
+                        firstRussianSubtitlesMargin < 0 ? 0 : firstRussianSubtitlesMargin;
 
-                var thirdRussianSubtitlesMargin = originalSubtitlesMarginNumericUpDown.Value -
-                                                  (2 * originalSubtitlesSizeNumericUpDown.Value +
-                                                   originalSubtitlesSizeNumericUpDown.Value / 10);
-                thirdRussianSubtitlesMarginNumericUpDown.Value =
-                    thirdRussianSubtitlesMargin < 0 ? 0 : thirdRussianSubtitlesMargin;
+                    thirdRussianSubtitlesMarginNumericUpDown.Value = 290 - (2 * originalSubtitlesSizeNumericUpDown.Value +
+                                                       originalSubtitlesSizeNumericUpDown.Value / 10);
+                    secondRussianSubtitlesMarginNumericUpDown.Value = thirdRussianSubtitlesMarginNumericUpDown.Value -
+                        (2 * originalSubtitlesSizeNumericUpDown.Value +
+                                                       originalSubtitlesSizeNumericUpDown.Value / 10);
+                }
+                else
+                {
+                    firstRussianSubtitlesMarginNumericUpDown.Value =
+                        originalSubtitlesMarginNumericUpDown.Value +
+                        (2 * originalSubtitlesSizeNumericUpDown.Value +
+                         originalSubtitlesSizeNumericUpDown.Value / 10);
+                    secondRussianSubtitlesMarginNumericUpDown.Value = originalSubtitlesMarginNumericUpDown.Value +
+                                                                      (2 * originalSubtitlesSizeNumericUpDown.Value +
+                                                                       originalSubtitlesSizeNumericUpDown.Value / 10) * 2;
+
+                    var thirdRussianSubtitlesMargin = originalSubtitlesMarginNumericUpDown.Value -
+                                                      (2 * originalSubtitlesSizeNumericUpDown.Value +
+                                                       originalSubtitlesSizeNumericUpDown.Value / 10);
+                    thirdRussianSubtitlesMarginNumericUpDown.Value =
+                        thirdRussianSubtitlesMargin < 0 ? 0 : thirdRussianSubtitlesMargin;
+                }
 
             }
         }
@@ -509,9 +550,12 @@ namespace BilingualSubtitler
 
         private void firstRussianSubtitlesTransparencyPercentageNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            secondRussianSubtitlesTransparencyPercentageNumericUpDown.Value =
+            if (changeRussianSubtitlesStylesAccordingToOriginalCheckBox.Checked)
+            {
+                secondRussianSubtitlesTransparencyPercentageNumericUpDown.Value =
                 thirdRussianSubtitlesTransparencyPercentageNumericUpDown.Value =
                     firstRussianSubtitlesTransparencyPercentageNumericUpDown.Value;
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -544,6 +588,16 @@ namespace BilingualSubtitler
                 {
                     AddKeyToHotkeysDataGridView(hotkeyString);
                 }
+            }
+        }
+
+        private void firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (changeRussianSubtitlesStylesAccordingToOriginalCheckBox.Checked)
+            {
+                secondRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Value =
+                thirdRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Value =
+                    firstRussianSubtitlesShadowTransparencyPercentageNumericUpDown.Value;
             }
         }
 
